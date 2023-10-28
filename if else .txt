@@ -1,0 +1,14 @@
+string compareIfElse(int a, int b) {
+	// Write your code here
+	string ans;
+	if(a>b){
+		ans = "greater";
+	}
+	else if (a<b){
+		ans = "smaller";
+	}
+	else{
+		ans = "equal";
+	}
+	return ans;
+};

@@ -1,0 +1,14 @@
+
+bool palindrome(int n)
+{
+    // Write your code here
+    int rev=0;
+    int original_n=n;
+   
+    while (n > 0) {
+      int i=n%10; //getting last digit
+      rev = rev * 10 + i;
+      n /= 10;
+    }
+    return (original_n==rev);
+}

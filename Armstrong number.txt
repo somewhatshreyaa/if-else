@@ -1,0 +1,20 @@
+#include<string>
+#include<cmath>
+
+
+bool checkArmstrong(int n){
+	
+    //to calculate lentgh of a number
+	string nstr=to_string(n);
+	int power=nstr.length();
+
+	int original_n=n;
+	int Armstr=0;
+	while(n>0){
+		int digit=n%10;
+		Armstr=Armstr+pow(digit, power);
+		n/=10;
+	}
+	
+    return(Armstr == original_n);
+}

@@ -1,0 +1,16 @@
+//coding ninjas
+
+#include <algorithm>
+
+int calcGCD(int n, int m) {
+    while (n % m != 0) {
+        int temp = m;
+        m = n % m;
+        n = temp;
+    }
+    return m;
+}
+
+//leetcode
+
+

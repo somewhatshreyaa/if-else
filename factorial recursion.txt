@@ -22,4 +22,5 @@ vector<long long> factorialNumbers(long long n) {
 
     return ans;
 
+
 }

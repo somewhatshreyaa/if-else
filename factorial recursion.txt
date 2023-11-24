@@ -14,6 +14,7 @@ vector<long long> factorialNumbers(long long n) {
 
     for(int i = 1; fact(i) <= n; i++){
 
+
         long long res = fact(i);
 
         ans.push_back(res);

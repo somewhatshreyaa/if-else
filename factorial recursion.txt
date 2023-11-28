@@ -4,6 +4,7 @@ long long fact(long long n){
 
     return n*fact(n-1);
 
+
 }
 
 vector<long long> factorialNumbers(long long n) {

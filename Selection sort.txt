@@ -1,0 +1,16 @@
+int n;
+
+void selectionSort(vector<int>&arr) {
+    int mini = 0;
+
+    // Write your code here.
+    for(int i = 0; i<arr.size()-1; i++){
+        mini = i;
+        for (int j = i; j <arr.size(); j++){
+            if (  arr[mini] > arr[j] ){
+                swap(arr[mini], arr[j]);
+            }
+        }
+    }
+
+}

@@ -22,6 +22,7 @@ vector<long long> factorialNumbers(long long n) {
 
         ans.push_back(res);
 
+
     }
 
 

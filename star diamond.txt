@@ -29,4 +29,5 @@ void nStarDiamond(int n) {
         cout<<endl;
     
     }
+
 }

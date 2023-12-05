@@ -1,0 +1,21 @@
+
+vector<int> getSecondOrderElements(int n, vector<int> a) {
+    // Write your code here.
+    sort(a.begin(), a.end());
+
+    vector<int> result;
+        
+    int a2 = a[1];
+    int a1 = a[n-2];
+
+    result.push_back(a1);
+    result.push_back(a2);
+
+    return result;
+    
+
+    
+}
+
+
+

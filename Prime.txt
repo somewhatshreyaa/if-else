@@ -15,6 +15,7 @@ bool prime(int num){
 	}
 	return true;
 
+
 }
 
 int main() {

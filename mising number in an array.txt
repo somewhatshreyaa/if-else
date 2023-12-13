@@ -1,0 +1,24 @@
+
+#include<algorithm>
+
+int missingNumber(vector<int>&a, int N) {
+    // Write your code here.
+    vector<int> b;
+    for ( int i = 1; i <= N; i++){
+        b.push_back(i);
+    }
+
+    sort(a.begin(), a.end());
+
+
+    
+    for ( int i = 0; i < N; i++){
+        if (a[i] != b[i]) {
+          return b[i];
+        }
+        
+    }
+
+    return N;
+   
+}

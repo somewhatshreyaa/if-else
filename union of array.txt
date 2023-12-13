@@ -1,0 +1,19 @@
+
+#include <set>
+#include <vector>
+#include <algorithm>
+
+std::vector<int> sortedArray(vector<int> a, vector<int> b) {
+    // Use const references for input vectors to avoid unnecessary copies
+    set<int> s1(a.begin(), a.end());  // Initialize set 's1' with elements from vector 'a'
+    set<int> s2(b.begin(), b.end());  // Initialize set 's2' with elements from vector 'b'
+
+    // Perform the union of sets 's1' and 's2'
+    set<int> unionSet;
+    set_union(s1.begin(), s1.end(), s2.begin(), s2.end(), std::inserter(unionSet, unionSet.begin()));
+
+    // Convert the unionSet to a vector
+    vector<int> result(unionSet.begin(), unionSet.end());
+
+    return result;
+}

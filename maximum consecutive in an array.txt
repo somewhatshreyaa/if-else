@@ -1,0 +1,23 @@
+
+int traffic(int n, int m, vector<int> vehicle) {
+
+	int count1 = 1, count0 = 1;
+
+		for ( int i = 0; i < vehicle.size(); i++){
+		if (vehicle[i] == 1){
+			count1++;
+		}
+		else{
+			count0++;
+		}
+	}
+
+	if (count1 >= count0){
+		return count1;
+	}
+	else{
+		return count0;
+	}
+
+	// Write your code here.
+}

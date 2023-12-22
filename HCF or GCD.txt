@@ -9,6 +9,8 @@ int calcGCD(int n, int m) {
         n = temp;
     }
     return m;
+
+
 }
 
 

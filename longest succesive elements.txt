@@ -1,0 +1,28 @@
+
+#include <vector>
+#include <algorithm>
+
+int longestSuccessiveElements(std::vector<int>& a) {
+    if (a.empty()) {
+        return 0; // Empty vector has no consecutive elements.
+    }
+
+    int count = 1; // Initialize count to 1 for the first element.
+    int maxCount = 1;
+
+    std::sort(a.begin(), a.end());
+
+    for (int i = 1; i < a.size(); i++) {
+        if (a[i] == a[i - 1] + 1) {
+            count++;
+        } else if (a[i] != a[i - 1]) {
+            // Reset count if the current element is not equal to the previous one.
+            count = 1;
+        }
+
+        // Update maxCount if needed.
+        maxCount = std::max(maxCount, count);
+    }
+
+    return maxCount;
+}

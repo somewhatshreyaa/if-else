@@ -15,7 +15,8 @@ bool checkArmstrong(int n){
 		Armstr=Armstr+pow(digit, power);
 		n/=10;
 	}
-	
+
+
     return(Armstr == original_n);
 
 }

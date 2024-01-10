@@ -3,6 +3,7 @@
 
 
 
+
 bool checkArmstrong(int n){
 	
     //to calculate lentgh of a number

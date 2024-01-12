@@ -1,0 +1,21 @@
+// #include <vector>
+// #include <algorithm>
+
+// int searchInsert(std::vector<int>& arr, int m)
+// {
+//     // Write your code here.
+//     int ans = 0; // Initialize ans outside the loop
+//     arr.push_back(m);
+//     std::sort(arr.begin(), arr.end());
+    
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         if (arr[i] == m)
+//         {
+//             ans = i;
+//             break; // Break once the target element is found
+//         }
+//     }
+    
+//     return ans;
+// }

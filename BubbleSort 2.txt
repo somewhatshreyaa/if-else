@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 void bubbleSort(int arr[], int n){
     int temp = 0;
     

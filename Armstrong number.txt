@@ -1,11 +1,6 @@
 
-
-
 #include<string>
 #include<cmath>
-
-
-
 
 bool checkArmstrong(int n){
 	

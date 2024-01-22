@@ -13,3 +13,5 @@ int linearSearch(int n, int num, vector<int> &arr)
     }
     return ans;
 }
+
+

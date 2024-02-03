@@ -13,3 +13,5 @@ int sumOfAllDivisors(int n){
     return sum;
 
 }
+
+

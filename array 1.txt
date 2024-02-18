@@ -10,7 +10,3 @@ int removeDuplicates(vector<int> &arr, int n) {
 	return arr.size();
 }
 
-
-
-
-

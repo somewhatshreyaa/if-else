@@ -18,8 +18,3 @@ int findMin(vector<int>& arr)
 
 }
 
-
-
-
-
-

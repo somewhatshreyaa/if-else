@@ -17,3 +17,9 @@ int findMin(vector<int>& arr)
     return ans;
 
 }
+
+
+
+
+
+

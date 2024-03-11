@@ -1,0 +1,43 @@
+int singleNonDuplicate(vector<int>& arr) {
+
+    int left = 0;
+
+    int right = arr.size() - 1;
+
+ 
+
+    while (left < right) {
+
+        int mid = left + (right - left) / 2;
+
+ 
+
+        // Ensure mid is even-indexed
+
+        if (mid % 2 != 0) {
+
+            mid--;
+
+        }
+
+ 
+
+        // Check if the non-duplicate is on the left or right
+
+        if (arr[mid] == arr[mid + 1]) {
+
+            left = mid + 2;
+
+        } else {
+
+            right = mid;
+
+        }
+
+    }
+
+ 
+
+    return arr[left];
+
+}

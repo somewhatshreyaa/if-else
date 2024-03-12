@@ -1,0 +1,15 @@
+#include <math.h>
+
+int floorSqrt(int n)
+{
+    // Write your code here.
+    double ans = 0.0;
+
+    ans = sqrt(n);
+    int Finalans = int(ans);
+     
+
+    return Finalans;
+
+
+}

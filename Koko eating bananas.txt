@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+
+ 
+
+long long timetaken(vector<int> &v, int hourly){
+
+    long long totalhrs = 0;
+
+    int n = v.size();
+
+    for(int i = 0;i< n ; i++){
+
+        totalhrs += ceil((double)v[i]/(double)hourly);
+
+    }
+
+    return totalhrs;
+
+}
+
+ 
+
+// int maxi(vector<int> &v){
+
+//     long long maxi = INT_MIN;
+
+//     int n = v.size();
+
+//     for(int i = 0 ; i< n; i++){
+
+//         maxi = max(maxi, v[i]);
+
+//     }
+
+//     return maxi;
+
+// }
+
+ 
+
+int minimumRateToEatBananas(vector<int> v, int h) {
+
+    int low = 1;
+
+    int high = *max_element(v.begin(), v.end());
+
+    int ans = INT_MAX;
+
+    while(low <= high){
+
+        int mid = (low + high) /2;
+
+        long long totalhrs = timetaken(v, mid);
+
+        if(totalhrs <= h){
+
+ 
+
+            high = mid -1;
+
+        }
+
+        else {
+
+            low = mid +1;
+
+        }
+
+    }
+
+    return low;
+
+}
+
+0 Upvoted

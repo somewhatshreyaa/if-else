@@ -1,3 +1,6 @@
+
+
+
 public class Solution {
 
     public static int NthRoot(int n, int m) {
@@ -23,4 +26,8 @@ public class Solution {
     }
 
 }
+
+
+
+
 

@@ -11,9 +11,7 @@ public class Solution {
         if(Math.pow(ans,n)==m){
 
             return ans;
-
         }
-
         else{
 
             return -1;
@@ -21,7 +19,6 @@ public class Solution {
         }
 
     }
-
 }
 
 

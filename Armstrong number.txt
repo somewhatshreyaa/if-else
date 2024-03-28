@@ -21,8 +21,3 @@ bool checkArmstrong(int n){
 
 
 
-
-
-
-
-

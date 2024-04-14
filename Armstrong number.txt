@@ -18,3 +18,12 @@ bool checkArmstrong(int n){
     return(Armstr == original_n);
 
 }
+
+
+
+
+
+
+
+
+

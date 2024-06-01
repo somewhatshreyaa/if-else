@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+
+class node{
+    public:
+    int data;
+    node* next;
+    Node(int val) : data(val), next(nullptr) {}
+}
+
+void deleteInBetween(node* &head, int val){
+    node* p = head;
+    while(p->next->data != val){
+        p = p->next;
+    }
+    node* q = p->next;
+    p->next = q->next;
+    delete q;
+}
+int main(){
+    
+    return 0;
+}

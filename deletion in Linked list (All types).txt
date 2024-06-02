@@ -1,0 +1,176 @@
+#include <iostream>
+using namespace std;
+
+//creation of Singly Linked List
+
+class node{
+    public:
+    int data;
+    node* next;
+    
+    node(int val){
+        data = val;
+        next = nullptr;
+    }
+    // node(int val) : val(data), next(NULL) {};
+};
+
+//Deletion in Linked List 
+
+
+void InsertAtHead(node* &head, int val){
+    node* n = new node(val);
+    
+    if(head == NULL){
+        head = n;
+        return;
+    }
+    n->next = head;
+    head = n;
+}
+
+//Deletion at Tail
+
+void InsertAtTail(node* head, int val){
+    node* n = new node(val);
+    if(head == NULL){
+        head = n;
+        return;
+    }
+    
+    node* temp = head;
+    while(temp->next != nullptr){
+        temp = temp->next;
+    }
+    temp->next = n;
+    
+}
+
+// Insert in between
+
+void InsertAtIndex(node* & head, int index, int val){
+    node* n = new node(val);
+    node* p = head;
+    node* q = head->next;
+    
+    if(head == nullptr){
+        head = n;
+        return;
+    }
+    for( int i = 0; i<=index; i++){
+        p = p->next;
+        q = q->next;
+    }
+    p->next = n;
+    n->next = q;
+}
+
+//Insert at value
+
+void InsertAtValue(node* head, int value, int val){
+    node* n = new node(val);
+    node* p = head;
+    
+    if(head == nullptr){
+        head = n;
+        return;
+    }
+    while(p->next->data != value){
+        p = p->next;
+    }
+    n->next = p->next;
+    p->next = n;
+}
+
+// Display
+
+void Display(node* head){  
+    node* temp = head;
+    while(temp != nullptr){
+        
+        cout<<temp->data<<"->";
+        temp = temp->next;
+    }
+    cout<<"NULL"<<endl;
+}
+
+//Deletion at Head
+void DeleteAtHead(node* &head){
+    
+    node* temp = head;
+    
+    head = head->next;
+    delete temp;
+}
+
+
+//deletion at tail
+
+void DeletionAtTail(node* head){
+    node* temp = head;
+    
+    while(temp->next->next != nullptr){
+        temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = nullptr;
+    
+}
+
+//delete at index
+
+void DeletionAtIndex(node* head, int index){
+    node* temp = head;
+    node* temp1 = head->next;
+    
+    for(int i = 0; i < index-1; i++){
+        temp=temp->next;
+        temp1 = temp1->next;
+    }
+    temp->next = temp1->next;
+    delete temp1;
+    
+}
+
+//delete at value
+
+void DeletionAtValue(node* head, int value){
+    node* temp = head;
+    node* temp1 = head->next;
+    
+    while(temp->next->data != value){
+        temp=temp->next;
+        temp1 = temp1->next;
+    }
+    temp->next = temp1->next;
+    delete temp1;
+    
+}
+
+
+
+int main(){
+    node* head = nullptr;
+    
+    InsertAtHead(head, 1);
+    InsertAtHead(head, 2);
+    InsertAtHead(head, 3);
+    
+    InsertAtTail(head, 9);
+    
+    InsertAtIndex(head,1, 74);
+    
+    InsertAtValue(head, 1, 66);
+    
+    DeleteAtHead(head);
+    
+    DeletionAtTail(head);
+    
+    DeletionAtIndex(head, 2);
+    
+    DeletionAtValue(head, 66);
+    
+    Display(head);
+    
+    return 0;
+}

@@ -1,0 +1,92 @@
+#include <iostream>
+using namespace std;
+
+class stack{
+public:
+    
+    int size;
+    int top;
+    int* arr;
+    
+    //constructor with a parameter named stacksize
+    stack(int stacksize){
+        size = stacksize;
+        top =- 1;
+        arr = new int[size];
+    }
+    
+    //destructor
+    ~stack(){
+        delete[] arr;
+    }
+    
+    //add elements
+    void push(int value){
+        if(top >= size-1){
+            cout<<"Stack overflow. Cannot push."<<value<<endl;
+        }else{
+            arr[++top] = value;
+        }
+    }
+    
+    //getFirstelement
+    
+    int getFirstelement(){
+        if(size>0){
+            return arr[0];
+        }else{
+            cout<<"Array is empty"<<endl;
+            return -1;
+        }
+    }
+    
+    // GetTop
+    int GetTop(){
+        if(top<0){
+            cout<<"Stack is empty"<<endl;
+            return 0;
+        }else{
+            return arr[top];
+        }
+    }
+    
+    bool isEmpty(){
+        return top<0;
+    }
+    
+    int getSize(){
+        return top+1;
+    }
+    
+    
+    //pop
+    
+    void pop(int value){
+        if(top<0){
+            cout<<"Stack is empty"<<endl;
+        }else{
+            --top;
+        }
+    }
+};
+
+int main(){
+    stack s(80);
+    
+    
+    s.push(1);
+    s.push(2);
+    s.push(23);
+    s.push(34);
+    
+    cout<<s.GetTop()<<endl;
+    
+    cout<<s.isEmpty()<<endl;
+    
+    s.pop(2);
+    
+    cout<<s.getSize()<<endl;
+    
+    cout<<s.GetTop();
+    return 0;
+}

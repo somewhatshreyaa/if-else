@@ -1,0 +1,86 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Stack {
+public:
+    char* arr;
+    int size;
+    int top;
+
+    Stack(int stackSize) {
+        size = stackSize;
+        top = -1;
+        arr = new char[size];
+    }
+
+    ~Stack() {
+        delete[] arr;
+    }
+
+    void push(char value) {
+        if (top >= size - 1) {
+            cout << "Stack Overflow." << endl;
+        } else {
+            arr[++top] = value;
+        }
+    }
+
+    char pop() {
+        if (top < 0) {
+            cout << "Stack Underflow." << endl;
+            return '\0';  // Return null character if underflow
+        } else {
+            return arr[top--];
+        }
+    }
+
+    bool IsEmpty() {
+        return top < 0;
+    }
+
+    bool IsFull() {
+        return top >= size - 1;
+    }
+
+    char StackTop() {
+        if (top >= 0) {
+            return arr[top];
+        }
+        return '\0';  // Return null character if stack is empty
+    }
+};
+
+bool isMatchingPair(char opening, char closing) {
+    return (opening == '(' && closing == ')') ||
+           (opening == '{' && closing == '}') ||
+           (opening == '[' && closing == ']');
+}
+
+bool checkParentheses(const string& str) {
+    Stack s(str.length());
+    for (char ch : str) {
+        if (ch == '(' || ch == '{' || ch == '[') {
+            s.push(ch);
+        } else if (ch == ')' || ch == '}' || ch == ']') {
+            if (s.IsEmpty() || !isMatchingPair(s.pop(), ch)) {
+                return false;
+            }
+        }
+    }
+    return s.IsEmpty();
+}
+
+int main() {
+    string str1;
+    cout << "Input String: ";
+    cin >> str1;
+
+    if (checkParentheses(str1)) {
+        cout << "Parentheses Matched!" << endl;
+    } else {
+        cout << "Parentheses didn't match!" << endl;
+    }
+    return 0;
+}
+S

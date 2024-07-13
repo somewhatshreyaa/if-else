@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+
+class Stack{
+public:
+    int* arr;
+    int size;
+    int top;
+    
+    Stack(int Stacksize){
+        size = Stacksize;
+        top = -1;
+        arr = new int[size];
+    }
+    
+    ~Stack(){
+        delete[] arr;
+    }
+    
+    void push(int value){
+        if(top >= size-1){
+            cout<<"Stack Overflow."<<endl;
+        }else{
+            arr[++top] = value;
+        }
+    }
+    
+    void pop(){
+        if(top<0){
+            cout<<"Stack Underflow."<<endl;
+        }else{
+            --top;
+        }
+    }
+    
+    bool IsEmpty(){
+        return top<0;
+    }
+    
+    bool IsFull(){
+        return top<=size-1;
+    }
+};
+
+bool checkparentheses(string& str){
+    Stack s(str.length());
+    for(char i : str){
+        if(i == '('){
+            s.push(1);
+        }else if(i == ')'){
+            if(s.IsEmpty()){
+                return false;
+            }else{
+                s.pop();
+            }
+        }
+    }
+    return s.IsEmpty();
+}
+int main(){
+    string str1;
+    
+    cout<<"Input String: "<<endl;
+    cin>>str1;
+    
+
+    
+    if(checkparentheses(str1)){
+        cout<<"Parentheses Matched!"<<endl;
+    }else{
+        cout<<"Parentheses didn't matched!"<<endl;
+    }
+    return 0;
+}

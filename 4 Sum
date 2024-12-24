@@ -1,0 +1,52 @@
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> ans;
+        int n = nums.size();
+
+       
+       sort(nums.begin(),nums.end());
+
+      for(int m=0;m<n;m++){
+        if(m>0 && nums[m-1]==nums[m]){
+            continue;
+        }
+
+        for(int i=m+1;i<n;i++){
+            if(i>m+1 && nums[i-1]==nums[i]){
+                continue;
+            }
+            int j=i+1;
+            int k=n-1;
+
+
+            while(j<k){
+                long long sum=static_cast<long long>(nums[i])+nums[j]+nums[k]+nums[m];
+                if(sum==target){
+                    vector<int>answer({nums[m],nums[i],nums[j],nums[k]});
+                    ans.push_back(answer);
+                    j++;
+                    k--;
+                    while(j<k && nums[j]==nums[j-1]){
+                        j++;
+                    }
+                    while(k>j && nums[k]==nums[k+1]){
+                        k--;
+                    }
+                }
+                else if(sum>target){
+                    k--;
+                }
+                else{
+                    j++;
+                }
+            }
+ 
+       }
+      }
+      
+
+        
+        return ans;
+    }
+};

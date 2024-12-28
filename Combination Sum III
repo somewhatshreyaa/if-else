@@ -1,0 +1,26 @@
+class Solution {
+public:
+    void answer(int i, int sum, vector<vector<int>>& final, vector<int> ans,
+                int size,int &k) {
+        if (sum == 0) {
+            if (size == k) {
+                final.push_back(ans);
+            }
+            return;
+        }
+
+        for (int ind = i; ind <= 9; ind++) {
+            if (ind <= sum) {
+                ans.push_back(ind);
+                answer(ind + 1, sum - ind, final, ans, size+1,k);
+                ans.pop_back();
+            }
+        }
+    }
+    vector<vector<int>> combinationSum3(int k, int n) {
+        vector<vector<int>> final;
+        vector<int> ans;
+        answer(1, n, final, ans, 0,k);
+        return final;
+    }
+};

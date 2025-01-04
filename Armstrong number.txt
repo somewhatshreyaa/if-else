@@ -24,3 +24,11 @@ bool checkArmstrong(int n){
 
 
 
+
+
+
+
+
+
+
+
